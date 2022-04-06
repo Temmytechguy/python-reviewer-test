@@ -18,7 +18,9 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
  */
 public class DynamoDBScan implements RequestHandler<Map<String,String>, String> {
 
-    static String tableName = "<FMI1>";
+    static String tableName = "CodeGuru-MusicCollection";
+    private static AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withRegion("us-east-1").build();
+
 
     @Override
     public String handleRequest(Map<String,String> event, Context context)
